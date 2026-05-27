@@ -43,14 +43,6 @@ export function InputBar({onSubmit, disabled=false}:Props){
 
     },[])
 
-    const handleTextareaContentChange = useCallback(()=>{
-        const textarea = textareaRef.current;
-        if(!textarea) return;
-
-
-        handleContentChange(textarea.plainText);
-    },[]);
-
     const handleSubmit = useCallback(()=>{
         if(disabled) return;
         const textarea = textareaRef.current;
@@ -81,6 +73,14 @@ export function InputBar({onSubmit, disabled=false}:Props){
         }
 
     },[renderer]);
+
+    const handleTextareaContentChange = useCallback(()=>{
+        const textarea = textareaRef.current;
+        if(!textarea) return;
+
+
+        handleContentChange(textarea.plainText);
+    },[resolveCommand , handleCommand]);
 
     // Wire up textarea submit handler once so it always reads the latest state.
     useEffect(()=>{

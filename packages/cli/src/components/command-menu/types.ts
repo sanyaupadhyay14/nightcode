@@ -1,5 +1,5 @@
 export type CommandContext ={
-    exit:()=>void;
+    exit: () => void;
 };
 export type Command = {
     name: string;

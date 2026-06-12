@@ -50,7 +50,7 @@ export const COMMANDS: Command[]=[
         name: "exit",
         description: "Quit the application",
         value : "/exit",
-        action: (ctx)=>{
+        action: (ctx)=> {
             ctx.exit();
         },
     },
